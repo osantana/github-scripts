@@ -37,7 +37,7 @@ def wait_until(reset_timestamp):
 def main(repository, output):
     """Export list of Stars of REPOSITORY (eg. `account/repo')"""
     try:
-        account, repo_name = repository.split('/')
+        account, repo_name = repository.split('/')[:2]
     except TypeError:
         click.echo(f'Invalid repository name: {repository}')
         return 1
