@@ -27,7 +27,7 @@ def wait_until(reset_timestamp):
     wait_time = reset_timestamp - current_timestamp
 
     wait_seconds = int(round(wait_time.total_seconds()))
-    for _ in tqdm(range(wait_seconds), desc=f"Waiting for rate limit reset", unit="s"):
+    for _ in tqdm(range(wait_seconds), desc=f"Waiting for rate limit reset", unit="s", file=sys.stderr):
         time.sleep(1)
 
 
